@@ -1,0 +1,2 @@
+version,device name,recording epoch time,recording time,recording timezone,platform,appVersion,device id,sensors,sampleRateMs,standardisation
+3,SM-S918N,1761333866860,2025-10-24_19-24-26,Africa/Kigali,android,1.47.1,0982f822-0bb6-4bfe-8b40-b6fa3ff108c4,Accelerometer|Gyroscope|Annotation|TotalAcceleration|GyroscopeUncalibrated|AccelerometerUncalibrated,10|10||10|10|10,false
