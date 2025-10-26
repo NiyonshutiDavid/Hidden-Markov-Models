@@ -1,10 +1,12 @@
 # Hidden Markov Models for Human Activity Recognition
 
-This project implements a complete Hidden Markov Model (HMM) pipeline for recognizing human activities from accelerometer and gyroscope sensor data collected via mobile devices.
+HMM for recognizing human activities from accelerometer and gyroscope data.
+
+**Team**: Afsa Umutoniwase, David Niyonshuti
 
 ## Project Overview
 
-The goal is to build an HMM that can infer human activity states (standing, walking, jumping, still) from noisy sensor measurements. The project follows a complete machine learning workflow from data collection to model evaluation.
+Building an HMM to detect activity states (standing, walking, jumping, still) from sensor measurements.
 
 ## Dataset
 
@@ -55,73 +57,51 @@ jupyter notebook HMM_Formative2.ipynb
 
 ## Notebook Structure
 
-The `HMM_Formative2.ipynb` notebook contains the complete pipeline:
-
-### 1. Data Loading and Organization
-- Load sensor data from nested folder structure
-- Categorize by activity type
-- Display activity distribution
+### 1. Data Loading
+Load and organize sensor data from nested folders.
 
 ### 2. Feature Extraction
-- Extract 24 features from time windows:
-  - 17 time-domain features (mean, variance, RMS, SMA)
-  - 4 frequency-domain features (dominant frequency, spectral energy)
-- Window size: 1.5 seconds (150 samples) with 50% overlap
-- Total: 398 windows from 50 samples
+Extract 24 features from time windows:
+- 20 time-domain (mean, variance, RMS for accel/gyro, SMA)
+- 4 frequency-domain (dominant frequency, spectral energy)
+Window size: 1.5s (150 samples), 50% overlap
+Total: 398 windows from 50 samples
 
 ### 3. Feature Normalization
-- Apply StandardScaler (Z-score normalization)
-- Save normalized features
+Apply StandardScaler (Z-score normalization)
 
-### 4. HMM Implementation and Training
-- Train activity-specific HMM models
-- Apply Baum-Welch algorithm
-- Display transition matrix
+### 4. HMM Training
+Train HMM models using Baum-Welch algorithm
 
 ### 5. Model Evaluation
-- Compute confusion matrix
-- Calculate sensitivity, specificity, and accuracy
-- Visualize emission probabilities
+Evaluate performance with confusion matrix, sensitivity, specificity, and accuracy
 
-## Feature Engineering
+## Features
 
-### Time-Domain Features (17)
-- **Mean** (6): Average acceleration/rotation per axis
-- **Variance** (6): Signal variability
-- **RMS** (6): Root mean square energy
-- **SMA** (2): Signal Magnitude Area
+20 time-domain features:
+- Mean, variance, RMS (6 each for accel + gyro)
+- SMA (2)
 
-### Frequency-Domain Features (4)
-- **Dominant frequency** (2): Primary frequency component
-- **Spectral energy** (2): Total frequency power
+4 frequency-domain features:
+- Dominant frequency (accel + gyro)
+- Spectral energy (accel + gyro)
 
-## Model Architecture
+## Model
 
-- **Type**: Gaussian Hidden Markov Model
-- **Hidden States**: 4 (standing, walking, jumping, still)
-- **Features**: 24-dimensional feature vectors
+- **Type**: Gaussian HMM
+- **States**: 4 activities (standing, walking, jumping, still)
+- **Features**: 24 dimensions
 - **Training**: Baum-Welch algorithm
-- **Prediction**: Activity-specific likelihood scoring
+- **Decoding**: Viterbi algorithm
 
 ## Results
 
-Performance metrics computed on test set (80/20 split):
-- **Sensitivity**: True positive rate per activity
-- **Specificity**: True negative rate per activity  
-- **Accuracy**: Overall classification accuracy
-
-Results saved in `data/Cleaned Data/performance_metrics.csv`.
+80/20 train-test split with performance metrics:
+- Sensitivity, specificity, and accuracy per activity
+- Results saved in `data/Cleaned Data/performance_metrics.csv`
 
 ## Files
 
 - `HMM_Formative2.ipynb` - Main analysis notebook
 - `requirements.txt` - Python dependencies
 - `data/Cleaned Data/` - Processed features and metrics
-
-## Key Features
-
-- Clean, organized notebook with logical flow
-- Comprehensive feature extraction (time + frequency domain)
-- Multiple HMM models for activity classification
-- Detailed performance evaluation
-- Ready for project submission
