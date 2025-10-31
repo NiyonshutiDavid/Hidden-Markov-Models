@@ -59,8 +59,7 @@ jupyter notebook HMM_Formative2.ipynb
 1. Go to https://colab.research.google.com/
 2. Upload the notebook after downloading it from github repo
 3. Choose your Runtime type and make sure it is running
-4. Access the Runtime terminal(command prompt) at the lower section where there is variables and terminal icon and click it.
-<img width="461" height="72" alt="Screenshot 2025-10-31 at 17 35 22" src="https://github.com/user-attachments/assets/24cc75b6-815e-439e-99cf-b22270fe26b4" />
+4. Access the Runtime terminal(command prompt) at the lower section where there is variables and terminal icon and click it.<img width="461" height="72" alt="Screenshot 2025-10-31 at 17 35 22" src="https://github.com/user-attachments/assets/24cc75b6-815e-439e-99cf-b22270fe26b4" />
 5. Clone the repo to access the raw data and necessary prerequisites 
 ```bash
 git clone <repository-url>
