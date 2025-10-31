@@ -37,7 +37,7 @@ data/
 - Python 3.8+
 - pip
 
-### Setup
+### Setup - Local IDE
 
 1. Clone the repository:
 ```bash
@@ -54,6 +54,11 @@ pip install -r requirements.txt
 ```bash
 jupyter notebook HMM_Formative2.ipynb
 ```
+### Google colab setup
+
+1. Go to https://colab.research.google.com/
+2. Upload the notebook after downloading it from github repo
+3. Choose your Runtime type and make sure it is running
 
 ## Notebook Structure
 
@@ -105,3 +110,4 @@ Evaluate performance with confusion matrix, sensitivity, specificity, and accura
 - `HMM_Formative2.ipynb` - Main analysis notebook
 - `requirements.txt` - Python dependencies
 - `data/Cleaned Data/` - Processed features and metrics
+- `/Visualizations` - Images of the plotted visualizations on data, features extraction, and performance analysis plots
